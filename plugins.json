@@ -1,1 +1,21 @@
-[]
+[
+    {
+        "fileHash": "sha256-dac9ac2b7c6cc336adbd974d609dbb5c4b98e8ac0532099240e1b8816516bc8f",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/Kartik72489/Kartik-",
+        "fileSize": 4915,
+        "status": 1,
+        "language": "en",
+        "authors": [
+            "Kartik72489"
+        ],
+        "tvTypes": [
+            "Other"
+        ],
+        "version": 1,
+        "internalName": "SiteMenu",
+        "description": "A simple menu that opens selected websites in your browser.",
+        "url": "https://raw.githubusercontent.com/Kartik72489/Kartik-/builds/SiteMenu.cs3",
+        "name": "SiteMenu"
+    }
+]
