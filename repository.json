@@ -1,0 +1,8 @@
+{
+  "name": "Kartik's CloudStream Repository",
+  "description": "Personal CloudStream plugin repository.",
+  "manifestVersion": 1,
+  "pluginLists": [
+    "https://raw.githubusercontent.com/Kartik72489/Kartik-/main/plugins.json"
+  ]
+}
