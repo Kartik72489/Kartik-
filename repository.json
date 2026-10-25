@@ -1,8 +1,8 @@
 {
   "name": "Kartik's CloudStream Repository",
-  "description": "Personal CloudStream plugin repository.",
+  "description": "Personal repository with a menu-only website shortcut plugin.",
   "manifestVersion": 1,
   "pluginLists": [
-    "https://raw.githubusercontent.com/Kartik72489/Kartik-/main/plugins.json"
+    "https://raw.githubusercontent.com/Kartik72489/Kartik-/builds/plugins.json"
   ]
 }
