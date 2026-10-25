@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>My Sites</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0b1020; --panel:#151d31; --border:#27334d; --text:#eef2ff; --muted:#aab6cf; --accent:#7dd3fc; }
+    * { box-sizing: border-box; }
+    body { margin:0; min-height:100vh; background:radial-gradient(ellipse at top,#1b2a48,var(--bg) 58%); color:var(--text); font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { width:min(760px,100%); margin:auto; padding:48px 20px 64px; }
+    h1 { margin:0; font-size:clamp(2rem,7vw,3rem); letter-spacing:-.04em; }
+    .intro { margin:8px 0 28px; color:var(--muted); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:12px; }
+    a.card { display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:72px; padding:16px 18px; color:var(--text); text-decoration:none; background:color-mix(in srgb,var(--panel) 92%,transparent); border:1px solid var(--border); border-radius:16px; transition:transform .15s,border-color .15s,background .15s; }
+    a.card:hover { transform:translateY(-2px); border-color:var(--accent); background:#1b2942; }
+    a.card:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+    .name { font-weight:650; }
+    .arrow { color:var(--accent); font-size:1.2rem; }
+    footer { margin-top:24px; color:var(--muted); font-size:.9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>My Sites</h1>
+    <p class="intro">Choose a site to open it in your browser.</p>
+    <nav class="grid" aria-label="My websites">
+      <a class="card" href="https://westreamf1.st/westreamf1.php" target="_blank" rel="noopener noreferrer"><span class="name">WeStreamF1</span><span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="card" href="https://mybuffstreams.plus/home7" target="_blank" rel="noopener noreferrer"><span class="name">MyBuffStreams</span><span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="card" href="https://buffsports.io/" target="_blank" rel="noopener noreferrer"><span class="name">BuffSports</span><span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="card" href="https://racinglap.net/" target="_blank" rel="noopener noreferrer"><span class="name">RacingLap</span><span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="card" href="https://www.rerace.net/" target="_blank" rel="noopener noreferrer"><span class="name">ReRace</span><span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="card" href="https://flive.dpdns.org/" target="_blank" rel="noopener noreferrer"><span class="name">FLive</span><span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="card" href="https://bingr.one/home" target="_blank" rel="noopener noreferrer"><span class="name">Bingr</span><span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="card" href="https://vidbox.wtf/home" target="_blank" rel="noopener noreferrer"><span class="name">Vidbox</span><span class="arrow" aria-hidden="true">↗</span></a>
+    </nav>
+    <footer>These links open external websites. Their availability and content are managed by those sites.</footer>
+  </main>
+</body>
+</html>
