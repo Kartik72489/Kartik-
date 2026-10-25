@@ -1,16 +1,19 @@
-# My Sites menu
+# My Sites menu for CloudStream
 
-This repository contains a simple responsive webpage with links that open the selected websites in a browser.
+This repo contains both a browser webpage and a menu-only CloudStream plugin project.
 
-## Files
+## CloudStream plugin
 
-- `index.html`: the menu webpage.
-- `repository.json` and `plugins.json`: CloudStream repository metadata. The plugin list is empty; these files do not turn the webpage into a CloudStream extension.
+The `SiteMenu` plugin presents the website list from its extension settings menu. Tapping a name opens that site in the phone's browser. It does not scrape pages or resolve video streams.
 
-## Important
+GitHub Actions builds the `.cs3` plugin and publishes it, along with `plugins.json`, on the `builds` branch. The root `repository.json` points CloudStream to that build list.
 
-A webpage is not a CloudStream provider plugin. CloudStream expects a built extension package in a repository. This page is intended to be opened in a browser. To show a menu inside CloudStream, it must be implemented and built as a plugin.
+To add the repository in CloudStream, use this URL after the repo is public and the build has completed:
 
-## Hosting with GitHub Pages
+`https://raw.githubusercontent.com/Kartik72489/Kartik-/main/repository.json`
 
-After the repository is public, enable GitHub Pages in **Settings → Pages** and select the `main` branch and root folder. GitHub will then display the published site URL in the Pages settings.
+If the workflow cannot push to `builds`, check **Settings → Actions → General → Workflow permissions** and allow read and write permissions.
+
+## Browser webpage
+
+`index.html` is a separate responsive page that opens the sites in a browser. It is not installed by CloudStream. GitHub Pages can host it separately from **Settings → Pages** after the repository is public.
