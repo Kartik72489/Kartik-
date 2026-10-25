@@ -1,0 +1,59 @@
+name: Build and publish CloudStream menu
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "*.md"
+      - "index.html"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cloudstream-build
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Check out builds branch
+        uses: actions/checkout@v4
+        with:
+          ref: builds
+          path: builds
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.9"
+
+      - name: Build CloudStream plugin
+        run: gradle make makePluginsJson
+
+      - name: Publish plugin files
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cp SiteMenu/build/*.cs3 "$GITHUB_WORKSPACE/builds/"
+          cp build/plugins.json "$GITHUB_WORKSPACE/builds/plugins.json"
+          cd "$GITHUB_WORKSPACE/builds"
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git add -A
+          git commit -m "Build from ${GITHUB_SHA}" || exit 0
+          git push origin builds
