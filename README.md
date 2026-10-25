@@ -1,26 +1,16 @@
-# Kartik's CloudStream Repository
+# My Sites menu
 
-This is the repository manifest scaffold for a personal CloudStream plugin repository.
+This repository contains a simple responsive webpage with links that open the selected websites in a browser.
 
-## Current state
+## Files
 
-- `repository.json` is the repository manifest.
-- `plugins.json` is currently empty, so adding this repository to CloudStream will not install any extensions yet.
-- No website extractors or stream resolvers have been added.
-- This repository does not yet include a plugin project or automated build workflow.
+- `index.html`: the menu webpage.
+- `repository.json` and `plugins.json`: CloudStream repository metadata. The plugin list is empty; these files do not turn the webpage into a CloudStream extension.
 
-The selected URLs include sites that appear to offer live sports broadcasts. I cannot verify that the content is authorized for redistribution, so I have not implemented code that scrapes, unlocks, or resolves their broadcasts. A provider can be added when there is a source you are authorized to access and the implementation stays within that authorization.
+## Important
 
-## Add this repository in CloudStream
+A webpage is not a CloudStream provider plugin. CloudStream expects a built extension package in a repository. This page is intended to be opened in a browser. To show a menu inside CloudStream, it must be implemented and built as a plugin.
 
-Use the raw URL for `repository.json`:
+## Hosting with GitHub Pages
 
-`https://raw.githubusercontent.com/Kartik72489/Kartik-/main/repository.json`
-
-It will be a valid but empty repository until authorized plugins are built and listed in `plugins.json`.
-
-## Official developer references
-
-- [Getting started](https://recloudstream.github.io/csdocs/devs/gettingstarted/)
-- [Using the plugin template](https://recloudstream.github.io/csdocs/devs/using-plugin-template/)
-- [Creating a JSON repository](https://recloudstream.github.io/csdocs/devs/create-your-own-json-repository/)
+After the repository is public, enable GitHub Pages in **Settings → Pages** and select the `main` branch and root folder. GitHub will then display the published site URL in the Pages settings.
